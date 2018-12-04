@@ -1,0 +1,33 @@
+﻿@using dojodachi.Models
+@model Dojodachi
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script rel="text/javascript" src="~/Jquery/MyJquery.js"></script>
+    <title>Dojodachi</title>
+</head>
+<body>
+    <h3 class ="status">Fullness:  @Model.Fullness  Happiness:  @Model.Happiness  Meals:  @Model.Meals  Energy:  @Model.Energy</h3>
+    <div>
+        <img src="~/images/Pet.png">
+        <p class="action_message"></p>
+    </div>
+    <form class = DojodachiData>
+        <input class="fullness" name="fullness" type="hidden"  value=@Model.Fullness>
+        <input class="happiness" name="happiness" type="hidden" asp-for="Happiness" value=@Model.Happiness>
+        <input class="meals" name="meals" type="hidden" asp-for="Meals" value=@Model.Meals>
+        <input class="energy" name="energy" type="hidden" asp-for="Energy" value=@Model.Energy>
+        <input class="feed" type="submit" value="Feed">
+        <input class="play" type="submit" value="Play">
+        <input class="work" type="submit" value="Work">
+        <input class="sleep" type="submit" value="Sleep">
+    </form>
+    <form class="PlayAgain">
+        <input type="submit" value="Play Again?">
+    </form>
+</body>
+</html>
